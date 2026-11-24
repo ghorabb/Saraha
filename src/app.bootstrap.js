@@ -27,7 +27,7 @@ async function bootstrap() {
       limit: (req, res) => {
         const geoInf = geoLite.lookup(req.ip);
 
-        return geoInf.country == "EG" ? 5 : 0;
+        return geoInf?.country == "EG" ? 5 : 0;
       },
       legacyHeaders: false,
       statusCode: 429,
